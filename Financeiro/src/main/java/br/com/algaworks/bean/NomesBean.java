@@ -8,7 +8,6 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.component.html.HtmlCommandButton;
 import javax.faces.component.html.HtmlInputText;
 
-
 @ManagedBean
 @ViewScoped
 public class NomesBean {
@@ -19,14 +18,23 @@ public class NomesBean {
 	private HtmlInputText inputNome;
 	private HtmlCommandButton botaoAdicionar;
 
-	public void adicionar() {
+//	public void adicionar() {
+//		this.nomes.add(nome);
+//		if (this.nomes.size() > 3) {
+//			this.inputNome.setDisabled(true);
+//			this.botaoAdicionar.setDisabled(true);
+//			this.botaoAdicionar.setValue("Muitos nomes adicionados...");
+//		}
+//	}
+
+	public String adicionar() {
 		this.nomes.add(nome);
 		if (this.nomes.size() > 3) {
-			this.inputNome.setDisabled(true);
-			this.botaoAdicionar.setDisabled(true);
-			this.botaoAdicionar.setValue("Muitos nomes adicionados...");
+			return "Ola?faces-redirect=true";
 		}
+		return null;
 	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -58,9 +66,5 @@ public class NomesBean {
 	public void setBotaoAdicionar(HtmlCommandButton botaoAdicionar) {
 		this.botaoAdicionar = botaoAdicionar;
 	}
-
-
-
-	
 
 }
