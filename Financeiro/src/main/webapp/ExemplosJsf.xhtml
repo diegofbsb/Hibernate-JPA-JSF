@@ -20,11 +20,10 @@
 			</ui:repeat>
 		</ol>
 
-<br/>
-<br/>
+		<br />
+		<br />
 		<h:outputLabel value="Time de futebol favorito: " for="timeFutebol0" />
-		<h:selectOneMenu value="#{cadastroTorcedorBean.timeFavorito}"
-			id="timeFutebol0">
+		<h:selectOneMenu id="timeFutebol0">
 			<f:selectItem itemValue="Corinthians" />
 			<f:selectItem itemValue="Flamengo" />
 			<f:selectItem itemValue="Palmeiras" />
@@ -33,8 +32,8 @@
 			<f:selectItem itemValue="Vasco" />
 			<f:selectItem itemValue="Outro" />
 		</h:selectOneMenu>
-<br/>
-<br/>
+		<br />
+		<br />
 		<label for="frm:timeFutebol2">Time de futebol favorito: </label>
 		<select id="frm:timeFutebol2" name="frm:timeFutebol2" size="1">
 			<option value="Corinthians">Corinthians</option>
@@ -45,11 +44,10 @@
 			<option value="Vasco">Vasco</option>
 			<option value="Outro">Outro</option>
 		</select>
-<br/>
-<br/>
+		<br />
+		<br />
 		<h:outputLabel value="Time de futebol favorito: " for="timeFutebol3" />
-		<h:selectOneMenu value="#{cadastroTorcedorBean.timeFavorito}"
-			id="timeFutebol3">
+		<h:selectOneMenu id="timeFutebol3">
 			<f:selectItem itemValue="Corinthians" itemLabel="Timão" />
 			<f:selectItem itemValue="Flamengo" itemLabel="Mengão" />
 			<f:selectItem itemValue="Palmeiras" />
@@ -58,8 +56,8 @@
 			<f:selectItem itemValue="Vasco" itemLabel="Vascão" />
 			<f:selectItem itemValue="Outro" />
 		</h:selectOneMenu>
-<br/>
-<br/>
+		<br />
+		<br />
 		<label for="frm:timeFutebol4">Time de futebol favorito: </label>
 		<select id="frm:timeFutebol4" name="frm:timeFutebol4" size="1">
 			<option value="Corinthians">Timão</option>
@@ -70,11 +68,10 @@
 			<option value="Vasco">Vascão</option>
 			<option value="Outro">Outro</option>
 		</select>
-<br/>
-<br/>
+		<br />
+		<br />
 		<h:outputLabel value="Times de futebol favoritos: " for="timeFutebol5" />
-		<h:selectManyMenu value="#{cadastroTorcedorBean.timesFavoritos}"
-			id="timeFutebol5">
+		<h:selectManyMenu id="timeFutebol5">
 			<f:selectItem itemValue="Corinthians" />
 			<f:selectItem itemValue="Flamengo" />
 			<f:selectItem itemValue="Palmeiras" />
@@ -83,25 +80,24 @@
 			<f:selectItem itemValue="Vasco" />
 			<f:selectItem itemValue="Outro" />
 		</h:selectManyMenu>
-<br/>
-<br/>
+		<br />
+		<br />
 		<label for="frm:timeFutebol6">Times de futebol favoritos: </label>
 		<select id="frm:timeFutebol6" name="frm:timeFutebol6"
 			multiple="multiple" size="1">
 			<option value="Corinthians">Corinthians</option>
 			<option value="Flamengo">Flamengo</option>
 			<option value="Palmeiras">Palmeiras</option>
-			<option value="Santos">Santos</option> 
+			<option value="Santos">Santos</option>
 			<option value="São Paulo">São Paulo</option>
 			<option value="Vasco">Vasco</option>
 			<option value="Outro">Outro</option>
 		</select>
-<br/>
-<br/>
+		<br />
+		<br />
 
 		<h:outputLabel value="Time de futebol favorito: " for="timeFutebol7" />
-		<h:selectOneListbox value="#{cadastroTorcedorBean.timeFavorito}"
-			id="timeFutebol7" size="4">
+		<h:selectOneListbox id="timeFutebol7" size="4">
 			<f:selectItem itemValue="Corinthians" />
 			<f:selectItem itemValue="Flamengo" />
 			<f:selectItem itemValue="Palmeiras" />
@@ -110,12 +106,11 @@
 			<f:selectItem itemValue="Vasco" />
 			<f:selectItem itemValue="Outro" />
 		</h:selectOneListbox>
-<br/>
-<br/>
+		<br />
+		<br />
 
 		<h:outputLabel value="Times de futebol favoritos: " for="timeFutebol8" />
-		<h:selectManyListbox value="#{cadastroTorcedorBean.timesFavoritos}"
-			id="timeFutebol8" size="4" >
+		<h:selectManyListbox id="timeFutebol8" size="4">
 			<f:selectItem itemValue="Corinthians" />
 			<f:selectItem itemValue="Flamengo" />
 			<f:selectItem itemValue="Palmeiras" />
@@ -124,26 +119,77 @@
 			<f:selectItem itemValue="Vasco" />
 			<f:selectItem itemValue="Outro" />
 		</h:selectManyListbox>
-<br/>
-<br/>
+		<br />
+		<br />
 
 		<h:selectOneRadio id="sexo0">
 			<f:selectItem itemValue="M" itemLabel="Masculino" />
 			<f:selectItem itemValue="F" itemLabel="Feminino" />
 		</h:selectOneRadio>
-<br/>
-<br/>
+		<br />
+		<br />
 
 		<h:selectOneRadio id="sexo1" layout="pageDirection">
 			<f:selectItem itemValue="M" itemLabel="Masculino" />
 			<f:selectItem itemValue="F" itemLabel="Feminino" />
 		</h:selectOneRadio>
-<br/>
-<br/>
-		<h:selectBooleanCheckbox id="aceite"
-			value="#{cadastroUsuarioBean.termoAceito}" />
+		<br />
+		<br />
+		<h:selectBooleanCheckbox id="aceite" />
 		<h:outputLabel value="Li e aceito os termos e condições" for="aceite" />
 
+		<br />
+		<br />
+		<h:selectOneListbox size="5" value="#{minhaCidadeBean.cidadeNatal}">
+			<f:selectItems value="#{minhaCidadeBean.todasCidades}" />
+		</h:selectOneListbox>
+
+		<br />
+		<br />
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputText value="Dados para cadastro" />
+			</f:facet>
+			<h:outputText value="Nome:" />
+			<h:inputText size="20" />
+			<h:outputText value="E-mail:" />
+			<h:panelGroup>
+				<h:inputText size="40" />
+				<h:commandButton value="Validar" />
+			</h:panelGroup>
+			<h:outputText value="Senha:" />
+			<h:inputSecret size="20" />
+			<h:outputText />
+			<h:commandButton value="Cadastrar" />
+		</h:panelGrid>
+	</h:form>
+	<br />
+	<br />
+	<h:form>
+		<h:messages showDetail="true" showSummary="true"
+			errorStyle="color: red" infoStyle="color: green"
+			warnStyle="color: orange" fatalStyle="color: gray" />
+		<h:outputLabel value="Nome:" />
+		<h:inputText value="#{minhaCidadeBean.nome}" />
+		<h:commandButton value="Cadastrar"
+			action="#{minhaCidadeBean.cadastrar}" />
+	</h:form>
+
+	<br />
+	<br />
+	<h:form>
+		<h:dataTable value="#{livrosBean.livros}" var="livro" border="1"
+			cellspacing="0" cellpadding="2">
+			<f:facet name="header"> Relação de livros favoritos </f:facet>
+			<h:column>
+				<f:facet name="header">Título</f:facet>
+				<h:outputText value="#{livro.titulo}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Autor</f:facet>
+				<h:outputText value="#{livro.autor}" />
+			</h:column>
+		</h:dataTable>
 	</h:form>
 </h:body>
 </html>
