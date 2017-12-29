@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+<h:head>
+	<title>Lista de nomes</title>
+</h:head>
+<h:body>
+	<h:form> Nome: <h:inputText value="#{nomesBean.nome}"
+			binding="#{nomesBean.inputNome}" />
+		<br />
+		<h:commandButton value="Adicionar" action="#{nomesBean.adicionar}"
+			binding="#{nomesBean.botaoAdicionar}" />
+		<br />
+		<ol>
+			<ui:repeat var="nome" value="#{nomesBean.nomes}">
+				<li>#{nome}</li>
+			</ui:repeat>
+		</ol>
+
+<br/>
+<br/>
+		<h:outputLabel value="Time de futebol favorito: " for="timeFutebol0" />
+		<h:selectOneMenu value="#{cadastroTorcedorBean.timeFavorito}"
+			id="timeFutebol0">
+			<f:selectItem itemValue="Corinthians" />
+			<f:selectItem itemValue="Flamengo" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectOneMenu>
+<br/>
+<br/>
+		<label for="frm:timeFutebol2">Time de futebol favorito: </label>
+		<select id="frm:timeFutebol2" name="frm:timeFutebol2" size="1">
+			<option value="Corinthians">Corinthians</option>
+			<option value="Flamengo">Flamengo</option>
+			<option value="Palmeiras">Palmeiras</option>
+			<option value="Santos">Santos</option>
+			<option value="São Paulo">São Paulo</option>
+			<option value="Vasco">Vasco</option>
+			<option value="Outro">Outro</option>
+		</select>
+<br/>
+<br/>
+		<h:outputLabel value="Time de futebol favorito: " for="timeFutebol3" />
+		<h:selectOneMenu value="#{cadastroTorcedorBean.timeFavorito}"
+			id="timeFutebol3">
+			<f:selectItem itemValue="Corinthians" itemLabel="Timão" />
+			<f:selectItem itemValue="Flamengo" itemLabel="Mengão" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" itemLabel="Vascão" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectOneMenu>
+<br/>
+<br/>
+		<label for="frm:timeFutebol4">Time de futebol favorito: </label>
+		<select id="frm:timeFutebol4" name="frm:timeFutebol4" size="1">
+			<option value="Corinthians">Timão</option>
+			<option value="Flamengo">Mengão</option>
+			<option value="Palmeiras">Palmeiras</option>
+			<option value="Santos">Santos</option>
+			<option value="São Paulo">São Paulo</option>
+			<option value="Vasco">Vascão</option>
+			<option value="Outro">Outro</option>
+		</select>
+<br/>
+<br/>
+		<h:outputLabel value="Times de futebol favoritos: " for="timeFutebol5" />
+		<h:selectManyMenu value="#{cadastroTorcedorBean.timesFavoritos}"
+			id="timeFutebol5">
+			<f:selectItem itemValue="Corinthians" />
+			<f:selectItem itemValue="Flamengo" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectManyMenu>
+<br/>
+<br/>
+		<label for="frm:timeFutebol6">Times de futebol favoritos: </label>
+		<select id="frm:timeFutebol6" name="frm:timeFutebol6"
+			multiple="multiple" size="1">
+			<option value="Corinthians">Corinthians</option>
+			<option value="Flamengo">Flamengo</option>
+			<option value="Palmeiras">Palmeiras</option>
+			<option value="Santos">Santos</option> 
+			<option value="São Paulo">São Paulo</option>
+			<option value="Vasco">Vasco</option>
+			<option value="Outro">Outro</option>
+		</select>
+<br/>
+<br/>
+
+		<h:outputLabel value="Time de futebol favorito: " for="timeFutebol7" />
+		<h:selectOneListbox value="#{cadastroTorcedorBean.timeFavorito}"
+			id="timeFutebol7" size="4">
+			<f:selectItem itemValue="Corinthians" />
+			<f:selectItem itemValue="Flamengo" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectOneListbox>
+<br/>
+<br/>
+
+		<h:outputLabel value="Times de futebol favoritos: " for="timeFutebol8" />
+		<h:selectManyListbox value="#{cadastroTorcedorBean.timesFavoritos}"
+			id="timeFutebol8" size="4" >
+			<f:selectItem itemValue="Corinthians" />
+			<f:selectItem itemValue="Flamengo" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectManyListbox>
+<br/>
+<br/>
+
+		<h:selectOneRadio id="sexo0">
+			<f:selectItem itemValue="M" itemLabel="Masculino" />
+			<f:selectItem itemValue="F" itemLabel="Feminino" />
+		</h:selectOneRadio>
+<br/>
+<br/>
+
+		<h:selectOneRadio id="sexo1" layout="pageDirection">
+			<f:selectItem itemValue="M" itemLabel="Masculino" />
+			<f:selectItem itemValue="F" itemLabel="Feminino" />
+		</h:selectOneRadio>
+<br/>
+<br/>
+		<h:selectBooleanCheckbox id="aceite"
+			value="#{cadastroUsuarioBean.termoAceito}" />
+		<h:outputLabel value="Li e aceito os termos e condições" for="aceite" />
+
+	</h:form>
+</h:body>
+</html>
