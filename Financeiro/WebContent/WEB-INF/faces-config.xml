@@ -10,10 +10,27 @@
 		<managed-bean-class>br.com.algaworks.bean.NomesBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
+
 	<managed-bean>
 		<managed-bean-name>livrosBean</managed-bean-name>
 		<managed-bean-class>br.com.algaworks.bean.LivrosBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 
+	<managed-bean>
+		<managed-bean-name>calculadoraBean</managed-bean-name>
+		<managed-bean-class>br.com.algaworks.bean.CalculadoraBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>calculadoraDataBean</managed-bean-name>
+		<managed-bean-class>br.com.algaworks.bean.CalculadoraDataBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+
+	<application>
+		<message-bundle>br.com.algaworks.resources.Messages</message-bundle>
+	</application>
+	
 </faces-config>
