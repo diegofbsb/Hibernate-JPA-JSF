@@ -2,6 +2,7 @@ package br.com.algaworks.bean;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.persistence.EntityManager;
@@ -11,7 +12,7 @@ import br.com.algawork.util.JpaUtil;
 import br.com.algaworks.model.Lancamento;
 
 @ManagedBean
-@ViewScopedl
+@ViewScoped
 public class ConsultaLancamentosBean {
 	
 	private List<Lancamento> lancamentos;
