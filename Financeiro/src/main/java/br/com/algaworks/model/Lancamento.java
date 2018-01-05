@@ -14,6 +14,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "lancamento")
@@ -23,20 +27,27 @@ public class Lancamento {
 	@GeneratedValue
 	private Long id;
 
+	@NotNull
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "pessoa_id")
 	private Pessoa pessoa;
 
+	@NotEmpty
+	@Size(max = 80)
 	@Column(length = 80, nullable = false)
 	private String descricao;
 
+	@NotNull
+	@DecimalMin("0") 
 	@Column(precision = 10, scale = 2, nullable = false)
 	private BigDecimal valor;
 
+	@NotNull 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private TipoLancamento tipo;
 
+	@NotNull 
 	@Column(name = "data_vencimento", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataVencimento;
