@@ -28,9 +28,22 @@
 		<managed-bean-class>br.com.algaworks.bean.CalculadoraDataBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>cadastroLancamentoBean</managed-bean-name>
+		<managed-bean-class>br.com.algaworks.bean.CadastroLancamentoBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	
+	
+	<managed-bean>
+		<managed-bean-name>meuBean</managed-bean-name>
+		<managed-bean-class>br.com.algaworks.bean.MeuBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
 
 	<application>
-		<message-bundle>br.com.algaworks.resources.Messages</message-bundle>
+		<message-bundle>resources.Messages</message-bundle>
 	</application>
 	
 </faces-config>

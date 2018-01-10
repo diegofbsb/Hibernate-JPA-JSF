@@ -2,10 +2,14 @@ package com.algaworks.repository;
 
 import java.util.Date;
 
+import javax.inject.Inject;
+
 import br.com.algawork.util.NegocioException;
 import br.com.algaworks.model.Lancamento;
 
 public class CadastroLancamentos {
+	
+	@Inject
 	private Lancamentos lancamentos;
 
 	public CadastroLancamentos(Lancamentos lancamentos) {

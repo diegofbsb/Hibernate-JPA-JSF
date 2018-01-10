@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
@@ -17,10 +18,12 @@ import br.com.algaworks.model.Lancamento;
 import br.com.algaworks.model.Pessoa;
 import br.com.algaworks.model.TipoLancamento;
 
-
 public class CadastroLancamentoBean {
+
 	private static final long serialVersionUID = 1L;
+
 	private Lancamento lancamento = new Lancamento();
+
 	private List<Pessoa> todasPessoas;
 
 	public void prepararCadastro() {
@@ -34,24 +37,25 @@ public class CadastroLancamentoBean {
 	}
 
 	public void salvar() {
-		EntityManager manager = JpaUtil.getEntityManager();
-		EntityTransaction trx = manager.getTransaction();
-		FacesContext context = FacesContext.getCurrentInstance();
-		try {
-			trx.begin();
-			CadastroLancamentos cadastro = new CadastroLancamentos(new Lancamentos(manager));
-			cadastro.salvar(this.lancamento);
-			this.lancamento = new Lancamento();
-			context.addMessage(null, new FacesMessage("Lançamento salvo com sucesso!"));
-			trx.commit();
-		} catch (NegocioException e) {
-			trx.rollback();
-			FacesMessage mensagem = new FacesMessage(e.getMessage());
-			mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);
-			context.addMessage(null, mensagem);
-		} finally {
-			manager.close();
-		}
+		 EntityManager manager = JpaUtil.getEntityManager();
+		 EntityTransaction trx = manager.getTransaction();
+		 FacesContext context = FacesContext.getCurrentInstance();
+		 try {
+		 trx.begin();
+		 CadastroLancamentos cadastro = new CadastroLancamentos(new
+		 Lancamentos(manager));
+		 cadastro.salvar(this.lancamento);
+		 this.lancamento = new Lancamento();
+		 context.addMessage(null, new FacesMessage("Lançamento salvo com sucesso!"));
+		 trx.commit();
+		 } catch (NegocioException e) {
+		 trx.rollback();
+		 FacesMessage mensagem = new FacesMessage(e.getMessage());
+		 mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);
+		 context.addMessage(null, mensagem);
+		 } finally {
+		 manager.close();
+		 }
 	}
 
 	public List<Pessoa> getTodasPessoas() {
