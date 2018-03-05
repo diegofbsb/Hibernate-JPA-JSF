@@ -3,8 +3,9 @@ package br.com.algaworks.bean;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
@@ -18,6 +19,8 @@ import br.com.algaworks.model.Lancamento;
 import br.com.algaworks.model.Pessoa;
 import br.com.algaworks.model.TipoLancamento;
 
+@ManagedBean
+@ViewScoped
 public class CadastroLancamentoBean {
 
 	private static final long serialVersionUID = 1L;

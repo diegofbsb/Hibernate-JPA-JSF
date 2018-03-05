@@ -39,19 +39,25 @@
 					<f:facet name="header">
 						<h:outputText value="Valor" />
 					</f:facet>
-					<h:outputText value="#{lancamento.valor}" />
+					<h:outputText value="#{lancamento.valor}" >
+					<f:convertNumber type="currency"/>
+					</h:outputText>
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Data de vencimento" />
 					</f:facet>
-					<h:outputText value="#{lancamento.dataVencimento}" />
+					<h:outputText value="#{lancamento.dataVencimento}" >
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Data de pagamento" />
 					</f:facet>
-					<h:outputText value="#{lancamento.dataPagamento}" />
+					<h:outputText value="#{lancamento.dataPagamento}" >
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
 				</h:column>
 			</h:dataTable>
 		</h:form>

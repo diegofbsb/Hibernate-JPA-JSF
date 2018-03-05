@@ -14,6 +14,9 @@ import com.algaworks.repository.Lancamentos;
 import br.com.algawork.util.JpaUtil;
 import br.com.algaworks.model.Lancamento;
 
+
+@ManagedBean
+@ViewScoped
 public class ConsultaLancamentosBean {
 
 	private List<Lancamento> lancamentos;

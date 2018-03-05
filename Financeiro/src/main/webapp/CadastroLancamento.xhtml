@@ -3,8 +3,8 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 	<f:metadata>
 		<f:viewAction action="#{cadastroLancamentoBean.prepararCadastro}" />
 	</f:metadata>
@@ -14,7 +14,7 @@
 	<ui:define name="corpo">
 		<h1>Cadastro de lançamento</h1>
 		<h:form id="frm">
-	
+
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Tipo" />
 				<h:selectOneRadio value="#{cadastroLancamentoBean.lancamento.tipo}"
@@ -34,26 +34,20 @@
 					value="#{cadastroLancamentoBean.lancamento.descricao}"
 					label="Descrição" />
 				<h:outputLabel value="Valor" />
-				<h:inputText size="12"
-					value="#{cadastroLancamentoBean.lancamento.valor}" label="Valor">
-					<f:convertNumber locale="pt_BR" maxFractionDigits="2"
-						minFractionDigits="2" />
-				</h:inputText>
+				<p:inputNumber size="12" 
+					value="#{cadastroLancamentoBean.lancamento.valor}" decimalSeparator="," thousandSeparator="." symbol="R$"/>
 				<h:outputLabel value="Data de vencimento" />
-				<h:inputText size="12"
-					value="#{cadastroLancamentoBean.lancamento .dataVencimento}"
-					label="Data de vencimento">
-					<f:convertDateTime pattern="dd/MM/yyyy"
-						timeZone="America/Sao_Paulo" />
-				</h:inputText>
+					<p:inputMask size="12"
+					value="#{cadastroLancamentoBean.lancamento.dataVencimento}"
+					mask="99/99/9999">
+					<f:convertDateTime locale="pt_BR"/>
+					</p:inputMask>
+					
 				<h:outputLabel value="Data de pagamento" />
-				<h:inputText size="12"
-					value="#{cadastroLancamentoBean.lancamento .dataPagamento}"
-					label="Data de pagamento">
-					<f:convertDateTime pattern="dd/MM/yyyy"
-						timeZone="America/Sao_Paulo" />
-				</h:inputText>
-				<h:outputLabel />
+				<p:inputMask size="12"
+					value="#{cadastroLancamentoBean.lancamento.dataPagamento}"
+					mask="99/99/9999" />
+				
 				<h:commandButton value="Salvar"
 					action="#{cadastroLancamentoBean.salvar}" />
 			</h:panelGrid>

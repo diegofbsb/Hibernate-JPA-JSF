@@ -46,4 +46,6 @@
 		<message-bundle>resources.Messages</message-bundle>
 	</application>
 	
+	
+	
 </faces-config>

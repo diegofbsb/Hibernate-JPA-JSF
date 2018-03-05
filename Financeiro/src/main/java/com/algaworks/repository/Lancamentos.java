@@ -29,7 +29,7 @@ public class Lancamentos {
 		trx.begin();
 		this.manager.persist(lancamento);
 		trx.commit();
-
+		manager.close();
 	}
 
 }

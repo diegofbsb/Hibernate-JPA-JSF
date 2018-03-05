@@ -87,5 +87,13 @@
 			<artifactId>weld-servlet</artifactId>
 			<version>3.0.0.Alpha1</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.0</version>
+		</dependency>
+
 	</dependencies>
 </project>

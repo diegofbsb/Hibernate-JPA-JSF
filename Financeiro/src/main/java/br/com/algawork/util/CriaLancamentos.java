@@ -23,10 +23,10 @@ public class CriaLancamentos {
 		dataVencimento2.set(2013, 12, 10, 0, 0, 0);
 		
 		Pessoa cliente = new Pessoa();
-		cliente.setNome("Teste 3");
+		cliente.setNome("Teste 5");
 		
 		Pessoa fornecedor = new Pessoa();
-		fornecedor.setNome("Teste 4");
+		fornecedor.setNome("Teste 6");
 		
 		Lancamento lancamento1 = new Lancamento();
 		lancamento1.setDescricao("Venda ");
